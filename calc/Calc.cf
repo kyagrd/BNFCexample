@@ -1,3 +1,13 @@
+-- Exp ::= Exp "+" Exp  |  Exp "-" Exp  |  Exp "*" Exp  |  Exp "/" Exp | Integer
+--
+-- 1 + ( 3 * 4 ) - 2
+--
+-- 1 - (2 - (3 - 4))
+-- ((1 - 2) - 3) - 4   <------
+-- 1 - 2 - 3 - 4
+-- 1 / 2 / 3 / 4
+-- ((1/2) /3)/4
+
 -- file Calc.bnfc
 EAdd.	Exp	::=	Exp	"+"	Exp1	;
 ESub.	Exp	::=	Exp	"-"	Exp1	;
