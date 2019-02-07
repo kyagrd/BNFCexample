@@ -1,0 +1,14 @@
+-- STLC
+-- e1 e2 e3
+-- (e1 e2) e3
+
+ELam.     Exp   ::= "\\" Ident ":" Ty "." Exp ;
+EApp.     Exp1  ::= Exp1 Exp2 ;
+EVar.     Exp2  ::= Ident ;
+EInt.     Exp2  ::= Integer ;
+coercions Exp 2 ;
+
+TArr.     Ty  ::= Ty1 "->" Ty ;
+TInt.     Ty1 ::= "int" ;
+coercions Ty 1 ;
+
