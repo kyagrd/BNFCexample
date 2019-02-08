@@ -61,7 +61,7 @@ BNFCexample/calc$ diff Main.hs TestCalc.hs
 <                           showValue tree
 45,58d43
 < showValue :: Exp -> IO ()
-< showValue e = do putStr "\n[Linearized tree]\n\n" 
+< showValue e = do putStr "\n[Evaluated tree]\n\n" 
 <                  print (evalExp e)
 < 
 < evalExp :: Exp -> Maybe Integer
