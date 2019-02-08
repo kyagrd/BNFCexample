@@ -10,14 +10,14 @@ BNFCexample/calc$ bnfc --haskell Calc.cf
 
 Use Alex 3.0 to compile LexCalc.x.
 ParCalc.y Tested with Happy 1.15
-no change to file ./AbsCalc.hs
-no change to file ./LexCalc.x
-no change to file ./ParCalc.y
-writing file ./TestCalc.hs (saving old file as ./TestCalc.hs.bak)
-no change to file ./DocCalc.txt
-no change to file ./SkelCalc.hs
-no change to file ./PrintCalc.hs
-no change to file ./ErrM.hs
+writing new file ./AbsCalc.hs
+writing new file ./LexCalc.x
+writing new file ./ParCalc.y
+writing new file ./TestCalc.hs
+writing new file ./DocCalc.txt
+writing new file ./SkelCalc.hs
+writing new file ./PrintCalc.hs
+writing new file ./ErrM.hs
 BNFCexample/calc$ alex LexCalc.x
 BNFCexample/calc$ happy ParCalc.y
 BNFCexample/calc$ runhaskell TestCalc.hs
