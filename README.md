@@ -48,4 +48,30 @@ ESub (EAdd (EInt 1) (EMul (EInt 2) (ESub (EInt 4) (EInt 1)))) (EDiv (EInt 4) (EI
 [Linearized tree]
 
 Just 5
+BNFCexample/calc$ diff Main.hs TestCalc.hs 
+29c29
+< runFile :: Verbosity -> ParseFun Exp -> FilePath -> IO ()
+---
+> runFile :: (Print a, Show a) => Verbosity -> ParseFun a -> FilePath -> IO ()
+32c32
+< run :: Verbosity -> ParseFun Exp -> String -> IO ()
+---
+> run :: (Print a, Show a) => Verbosity -> ParseFun a -> String -> IO ()
+41d40
+<                           showValue tree
+45,58d43
+< showValue :: Exp -> IO ()
+< showValue e = do putStr "\n[Linearized tree]\n\n" 
+<                  print (evalExp e)
+< 
+< evalExp :: Exp -> Maybe Integer
+< evalExp (EAdd x y) = do { v1 <- evalExp x; v2 <- evalExp y; return (v1 + v2) }
+< evalExp (ESub x y) = do { v1 <- evalExp x; v2 <- evalExp y; return (v1 - v2) }
+< evalExp (EMul x y) = do { v1 <- evalExp x; v2 <- evalExp y; return (v1 * v2) }
+< evalExp (EDiv x y) = do v1 <- evalExp x
+<                         v2 <- evalExp y
+<                         case v2 of
+<                           0 -> Nothing
+<                           _ -> return (v1 `div` v2)
+< evalExp (EInt n) = return n
 ```
