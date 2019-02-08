@@ -43,7 +43,7 @@ run v p s = let ts = myLLexer s in case p ts of
                           exitSuccess
 
 showValue :: Exp -> IO ()
-showValue e = do putStr "\n[Linearized tree]\n\n" 
+showValue e = do putStr "\n[Evaluated tree]\n\n" 
                  print (evalExp e)
 
 evalExp :: Exp -> Maybe Integer
